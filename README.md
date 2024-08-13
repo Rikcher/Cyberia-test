@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Cyberia-test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Вёртска небольшого сайта по дизайну из фигмы в качестве тестового задания. Старался верстать pixel perfect, но местами просто использовал значения из tailwind'а. Сделал дизайн адаптивным как под разные экраны пк мониторов, так и под телефоны. Добавил от себя местами небольшие анимации и ховер эффекты. В дизайне кнопка переключения языков была скрыта, но я всё же добавил её вместе с её функционалом. Смену тем не стал добавлять, потому что не был уверен по поводу дизайна. Старался переиспользовать ключевые ui эелементы. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка
 
-## Expanding the ESLint configuration
+1. Убдитесь, что у вас установлены:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js 
+- npm или yarn 
 
-- Configure the top-level `parserOptions` property like this:
+2. Склонируйте репозиторий на своё локальное устройство.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Пропишите npm install для скачивания node_modules
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Контакты со мной
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Никита Медведев - [@Rikcher44](https://telegram.org/@Rikcher44) - nick.richardson.4884@gmail.com
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Используемые технологии
+
+- **React**
+- **Tailwind CSS**
+- **react-hook-form**
+- **TypeScript**
+- **i18next**
+- **React Router DOM v6.26**
