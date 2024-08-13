@@ -16,7 +16,7 @@
 
 ## Контакты со мной
 
-Никита Медведев - [@Rikcher44](https://telegram.org/@Rikcher44) - nick.richardson.4884@gmail.com
+Никита Медведев - [@Rikcher44](https://web.telegram.org/k/#@Rikcher44) - nick.richardson.4884@gmail.com
 
 ## Используемые технологии
 
