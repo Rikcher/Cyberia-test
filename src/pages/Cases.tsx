@@ -5,6 +5,7 @@ import InputField from "../components/ui/InputField";
 import Textarea from "../components/ui/Textarea";
 import CustomCheckbox from "../components/ui/CustomCheckbox";
 import SubmitButton from "../components/ui/SubmitButton";
+import feedbackIconMobile from "/src/assets/feedbackIconMobile.svg"
 import { API_URL } from "../constants";
 import { useEffect, useMemo, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
@@ -113,8 +114,8 @@ const Cases = () => {
 
     return (
         <div className="flex flex-col">
-            <p className="text-5xl font-semibold mb-16">{t(`${currentLabel}`)}</p>
-            <div className="flex justify-between mb-12">
+            <p className="text-xl font-medium font-rubik lg:font-fira sm:text-5xl font-semibold mb-12 lg:mb-16">{t(`${currentLabel}`)}</p>
+            <div className="mx-auto lg:mx-0 grid grid-cols-2 gap-4 auto-rows-auto sm:flex sm:flex-wrap sm:gap-6 lg:justify-between mb-12">
                 {categories.map(category => (
                     <FilterButton
                         key={category.id}
@@ -130,15 +131,18 @@ const Cases = () => {
                     />
                 ))}
             </div>
-            <div className="flex flex-wrap max-w-full gap-10 mb-24">
+            <div className="flex flex-wrap max-w-full justify-center gap-5 lg:gap-14 mb-14 lg:mb-24">
                 {sortedProjects.length > 0 && sortedProjects.map(project => (
                     <ProjectCard key={project.id} hoverText="Онлайн гипермаркет. Для компании были разработаны сайт и мобильное приложение и т.д." project={project} /> //? Could get hoverText from API
                 ))}
             </div>
-            <p className="text-5xl font-semibold mb-[4.75rem]">{t("feedback_form_title")}</p>
+            <div className="flex gap-5 items-center mb-9 lg:mb-[4.75rem] w-full lg:w-[22.5rem] justify-center lg:justify-start">
+                <img className="block lg:hidden w-[4.75rem]" src={feedbackIconMobile} alt="" />
+                <p className="text-2xl lg:text-5xl font-semibold font-rubik lg:font-fira">{t("feedback_form_title")}</p>
+            </div>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col mb-24">
-                    <div className="flex justify-between gap-9 mb-7">
+                <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col mb-9 lg:mb-24">
+                    <div className="flex flex-col lg:flex-row justify-between gap-5 lg:gap-9 mb-7">
                         <InputField label={t("name")} name="name"/>
                         <InputField label={t("email")} name="email"/>
                         <InputField label={t("phone")} name="phone"/>
@@ -146,9 +150,10 @@ const Cases = () => {
                     <Textarea label={t("message")} name="message"/>
                     <CustomCheckbox label={t("consent")}/>
                     <SubmitButton label={t("submit")}/>
+                    <p className="mt-6 text-center mx-auto max-w-80 lg:hidden">{t("consent_mobile")}</p>
                 </form>
             </FormProvider>
-            <div className={`fixed z-10 transition-bottom duration-300 ease-in-out ${showFeedbackSubmitMessage ? "bottom-5" : "-bottom-20"} left-1/2 transform -translate-x-1/2 px-10 py-5 ${feedbackSubmitMessage.error ? "bg-rose-500" : "bg-emerald-600"} mx-auto`}>{feedbackSubmitMessage.text}</div>
+            <div className={`fixed z-10 text-center transition-bottom duration-300 ease-in-out ${showFeedbackSubmitMessage ? "bottom-5" : "-bottom-20"} left-1/2 transform -translate-x-1/2 px-10 py-5 ${feedbackSubmitMessage.error ? "bg-rose-500" : "bg-emerald-600"} mx-auto`}>{feedbackSubmitMessage.text}</div>
         </div>
     )
 }

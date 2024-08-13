@@ -12,8 +12,19 @@ export default {
         'darker-gray': '#C7C7C7'
       },
       backgroundColor: {
-        'custom-blue': '#313341', // Custom background color
+        'custom-blue': '#313341', 
+        'deep-blue': '#252631'
       },
+      fontFamily: {
+        'rubik': ['Rubik', 'sans-serif'], 
+        'fira': ['Fira Sans', 'sans-serif'], 
+      },
+      screens: {
+        'xxm': '300px',
+      },
+      rotate: {
+        '42': '42deg',
+      }
     },
   },
   plugins: [

@@ -11,10 +11,10 @@ const Layout: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div id='AppWrapper' className='min-h-screen bg-custom-gradient flex flex-col'>
+        <div id='AppWrapper' className='min-h-screen bg-custom-gradient flex flex-col items-center'>
             <Header />
-            <main className='px-[21.25rem] grow'>
-                <p className='text-medium-gray mb-32'>
+            <main className='px-6 grow w-full max-w-[1300px]'>
+                <p className='text-medium-gray mb-8 lg:mb-32'>
                     {t("home")}
                     {currentLabel ? 
                     <><span className='text-medium-gray'> / </span><span className='text-light-gray'>{t(`${currentLabel}`)}</span></>

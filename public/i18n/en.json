@@ -11,5 +11,12 @@
     "phone": "Phone",
     "message": "Message",
     "consent": "Consent to the processing of personal data",
-    "submit": "Discuss the Project"
+    "submit": "Discuss the Project",
+    "send": "Send",
+    "consent_mobile": "By clicking “Send”, you agree to the processing of personal data",
+    "footer_title": "Web development and Improvement of IT Teams",
+    "footer_p": "2021, digital-agency Cyberia",
+    "footer_link_1": "Personal data protection policy",
+    "footer_link_2": "Policy on processing and protection of personal data",
+    "footer_link_3": "Offer for provision of services"
 }

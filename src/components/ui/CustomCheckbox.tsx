@@ -8,7 +8,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label }) => {
     const [checked, setChecked] = useState(false)
 
     return (
-        <div className="flex gap-3 items-center mb-16">
+        <div className="hidden lg:flex gap-3 items-center mb-16">
             <div className="relative">
                 <input
                     onClick={() => setChecked(!checked)}
