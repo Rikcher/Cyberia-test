@@ -14,6 +14,8 @@
 
 3. Пропишите npm install для скачивания node_modules
 
+4. Пропишитие npm run dev и перейдите по предоставленной ссылке
+
 ## Контакты со мной
 
 Никита Медведев - [@Rikcher44](https://web.telegram.org/k/#@Rikcher44) - nick.richardson.4884@gmail.com
