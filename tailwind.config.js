@@ -4,6 +4,7 @@ export default {
     extend: {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to bottom, #24252F 0%, #31313F 36%, #242530 100%)',
+        'hover-gradient': 'linear-gradient(to top, #090B21 0%, rgba(49, 51, 65, 0) 100%)'
       },
       textColor: {
         'light-gray': '#C4D2E3', 

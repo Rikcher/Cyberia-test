@@ -1,7 +1,16 @@
 export const LINKS = [
-    {label: "Агенство", path: "agency"},
-    {label: "Услуги", path: "services"},
-    {label: "Кейсы", path: "cases"},
-    {label: "Блог", path: "blog"},
-    {label: "Контакты", path: "contacts"},
+    {label: "agency", path: "agency"},
+    {label: "services", path: "services"},
+    {label: "cases", path: "cases"},
+    {label: "blog", path: "blog"},
+    {label: "contacts", path: "contacts"},
 ]
+
+export const API_URL = "https://api.test.cyberia.studio/api/v1"
+
+export const REGEXES = {
+    EMAIL: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+    PHONE_NUMBER: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+}
+
+export type Languages = 'ru' | 'en';
