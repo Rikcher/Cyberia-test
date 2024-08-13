@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { REGEXES } from '../../constants';
+import { useTranslation } from 'react-i18next';
 
 interface InputFieldProps {
     label: string;
@@ -14,6 +15,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
     } = useFormContext()
 
     const [validationRule, setValidationRule] = useState({});
+    const { t } = useTranslation();
 
     const updateValidationRule = (fieldName: string) => {
         switch (fieldName) {
@@ -21,7 +23,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
                 setValidationRule({
                     pattern: {
                         value: REGEXES.EMAIL,
-                        message: "Please enter a valid email",
+                        message: t("err_email"),
                     },
                 });
                 break;
@@ -29,7 +31,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
                 setValidationRule({
                     pattern: {
                         value: REGEXES.PHONE_NUMBER,
-                        message: "Please enter a valid phone number",
+                        message: t("err_phone"),
                     },
                 });
                 break;
@@ -37,7 +39,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
                 setValidationRule({
                     maxLength: {
                         value: 30,
-                        message: "Maximum length is 30 characters",
+                        message: t("err_general"),
                     },
                 });
         }
@@ -55,7 +57,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
             <fieldset className={`border border-solid ${errors[name] ? "border-rose-500" : "border-white"}  rounded-lg`}>
                 <legend className="hidden lg:block px-3 ml-8">{label}*</legend>
                 <input {...register(`${name}`,{
-                    required: "Please fill in this field",
+                    required: t("empty_input"),
                     ...validationRule,
                 } 
                 )} className="border-none outline-none focus:ring-0 decoration-none bg-transparent w-full py-4 lg:pb-4 lg:pt-2 px-5 placeholder:text-white lg:placeholder:text-transparent" type="text" placeholder={`${label}*`}/>

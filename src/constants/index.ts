@@ -1,3 +1,4 @@
+
 export const LINKS = [
     {label: "agency", path: "agency"},
     {label: "services", path: "services"},
@@ -6,7 +7,7 @@ export const LINKS = [
     {label: "contacts", path: "contacts"},
 ]
 
-export const API_URL = "https://api.test.cyberia.studio/api/v1"
+export const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const REGEXES = {
     EMAIL: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,

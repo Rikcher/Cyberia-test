@@ -18,5 +18,9 @@
     "footer_p": "2021, digital-agency Cyberia",
     "footer_link_1": "Personal data protection policy",
     "footer_link_2": "Policy on processing and protection of personal data",
-    "footer_link_3": "Offer for provision of services"
+    "footer_link_3": "Offer for provision of services",
+    "err_email": "Please enter a valid email",
+    "err_phone": "Please enter a valid phone number",
+    "err_general": "Maximum length is 30 characters",
+    "empty_input": "Please fill inthis field"
 }
