@@ -22,5 +22,6 @@
     "err_email": "Please enter a valid email",
     "err_phone": "Please enter a valid phone number",
     "err_general": "Maximum length is 30 characters",
-    "empty_input": "Please fill inthis field"
+    "empty_input": "Please fill inthis field",
+    "not_found": "The page you're attempting to access does not exist."
 }

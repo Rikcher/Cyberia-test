@@ -7,6 +7,16 @@ interface InputFieldProps {
     label: string;
     name: string;
 }
+interface ValidationRule {
+    pattern?: {
+        value: RegExp;
+        message: string;
+    };
+    maxLength?: {
+        value: number;
+        message: string;
+    };
+}
 
 const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
     const { 
@@ -14,7 +24,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
         formState: { errors },
     } = useFormContext()
 
-    const [validationRule, setValidationRule] = useState({});
+    const [validationRule, setValidationRule] = useState<ValidationRule>({});
     const { t } = useTranslation();
 
     const updateValidationRule = (fieldName: string) => {
@@ -45,7 +55,6 @@ const InputField: React.FC<InputFieldProps> = ({ label, name }) => {
         }
     };
 
-    // Watch the specific field to trigger validation rule update
     useEffect(() => {
         if (['email', 'phoneNumber'].includes(name)) {
             updateValidationRule(name);

@@ -20,7 +20,6 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ label }) => {
 
         window.addEventListener('resize', handleResize);
 
-        // Cleanup function to remove event listener
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

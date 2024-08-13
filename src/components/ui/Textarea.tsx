@@ -17,6 +17,7 @@ const Textarea: React.FC<TextareaProps> = ({ label, name }) => {
     
     return (
         <div className='flex flex-col gap-2 grow mb-10'>
+            <label htmlFor={name} className="hidden">{label}</label>
             <fieldset className={`border border-solid ${errors[name] ? "border-rose-500" : "border-white"} rounded-lg`}>
                 <legend className="hidden lg:block px-3 ml-8">{label}*</legend>
                 <textarea {...register(`${name}`, {required: t("empty_input")})} className="border-none outline-none focus:ring-0 decoration-none bg-transparent w-full pb-4 pt-4 lg:pt-2 px-5 placeholder-white lg:placeholder-transparent" placeholder={`${label}*`}></textarea>

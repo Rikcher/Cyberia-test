@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import themeToggler from '../assets/themeTogler.svg'; // Adjusted path
+import themeToggler from '../assets/themeTogler.svg'; 
 import LinksList from './ui/LinksList';
 import LogoLink from './ui/LogoLink';
 import i18n from '../i18n';
@@ -14,11 +14,11 @@ const Header: React.FC = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
     const { t } = useTranslation();
 
+    //сменить язык при нажатии на соответствующую кнопку в навбаре и добавить его как активный в локал сторадж
     const handleLanguageChange = (langCode: Languages) => {
-        i18n.changeLanguage(langCode);
-        localStorage.removeItem('translations'); // Remove translations cache when changing language
-        localStorage.setItem('lastSelectedLanguage', langCode); // Update the last-selected language
-        setSelectedLanguage(langCode); // Update the local state with the selected language
+        i18n.changeLanguage(langCode); 
+        localStorage.setItem('lastSelectedLanguage', langCode); 
+        setSelectedLanguage(langCode); 
     };
 
     useEffect(() => {
@@ -28,7 +28,6 @@ const Header: React.FC = () => {
 
         window.addEventListener('resize', handleResize);
 
-        // Cleanup function to remove event listener
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -40,6 +39,7 @@ const Header: React.FC = () => {
         <header className='w-full flex justify-center'>
             <nav className='text-white py-16 mx-auto px-6 w-[1300px] flex justify-between gap-5 items-center'>
                 <LogoLink />
+                {/* Если экран больше 1024px - рендер обычного навбара */}
                 {isLargeScreen ? (
                     <>
                     <div className="flex gap-[3.75rem]">    
@@ -68,6 +68,7 @@ const Header: React.FC = () => {
                     </div>
                     </>
                 ) : (
+                    // Если экран меньше 1024px рендер бургер меню
                     <>
                         <button className="right-6 z-30 hamburger-menu lg:hidden flex flex-col justify-between h-11 w-9 px-1 py-3 aspect-square cursor-pointer"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -75,6 +76,7 @@ const Header: React.FC = () => {
                             <span className={`rounded-full w-full h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></span>
                             <span className={`rounded-full w-full h-0.5 bg-white origin-bottom-right transition-all duration-300 ease-in-out ${isMenuOpen ? "rotate-42" : ""}`}></span>
                         </button>
+                        {/* Тут в классе я использую касмтоный класс no-doc-scroll, который отключает скрол страницы, пока оверлей открыт */}
                         <div className={`${isMenuOpen ? "opacity-100 top-0 no-doc-scroll" : "opacity-0 -top-80 pointer-events-none"} transition-all duration-300 ease-in-out h-screen w-screen fixed inset-0 bg-deep-blue pt-32 pb-10 px-6 z-20`}>
                             <div className='flex flex-col gap-8 border-b border-solid border-[#2B2D3A] pb-12 mb-9'>
                                 <LinksList closeMenu={closeMenu} />

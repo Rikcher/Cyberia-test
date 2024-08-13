@@ -11,6 +11,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label }) => {
         <div className="hidden lg:flex gap-3 items-center mb-16">
             <div className="relative">
                 <input
+                    aria-label={label}
                     onClick={() => setChecked(!checked)}
                     type="checkbox"
                     name="agreement"

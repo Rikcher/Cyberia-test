@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from '/src/assets/logo.svg'; // Ensure this path is correct
+import Logo from '/src/assets/logo.svg'; 
 
 interface LogoLinkProps {
     width?: number;

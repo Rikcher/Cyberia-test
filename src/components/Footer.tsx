@@ -3,7 +3,6 @@ import LinksList from './ui/LinksList';
 import LogoLink from './ui/LogoLink';
 import { useTranslation } from 'react-i18next';
 
-
 const Footer: React.FC = () => {
     const { t } = useTranslation();
 

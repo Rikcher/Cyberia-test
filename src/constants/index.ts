@@ -1,11 +1,16 @@
 
-export const LINKS = [
+export const LINKS: LinkItem[] = [
     {label: "agency", path: "agency"},
     {label: "services", path: "services"},
     {label: "cases", path: "cases"},
     {label: "blog", path: "blog"},
     {label: "contacts", path: "contacts"},
 ]
+
+interface LinkItem {
+    path: string;
+    label: string;
+}
 
 export const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
