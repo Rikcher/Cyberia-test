@@ -28,3 +28,7 @@
 - **TypeScript**
 - **i18next**
 - **React Router DOM v6.26**
+
+## Тестовое задание
+
+- https://docs.google.com/document/d/1urEXBU6PZdbod7ZJnIweUqub24NNPE65Rnd48SMbRjU/edit#heading=h.fjfnheggc9by
